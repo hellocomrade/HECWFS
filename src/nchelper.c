@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) *
- *    *
+ *   Copyright (C) 2008 by Guan Wang   *
+ *   gwang@glc.org   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -39,13 +39,13 @@ struct _var_Info
 *          errno:  netcdf error number, NOT POSIX errno
 *          msg:    user defined error message
 */
-inline static void print_nc_error(int errno,const char *msg)
+inline static void print_nc_error(int err,const char *msg)
 {
-    printError(errno>0?1:0,"NETCDF Error %d: %s\n",errno,msg);
+    printError(err!=0?1:0,"NETCDF Error %d: %s\n",err,msg);
 }
-inline static void print_nc_error1(int errno,const char *msg,const char *msg1)
+inline static void print_nc_error1(int err,const char *msg,const char *msg1)
 {
-    printError(errno>0?1:0,"NETCDF Error %d: %s %s\n",errno,msg,msg1);
+    printError(err!=0?1:0,"NETCDF Error %d: %s %s\n",err,msg,msg1);
 }
 /*
 *Open a netcdf file

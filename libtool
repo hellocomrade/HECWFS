@@ -30,10 +30,10 @@
 # the same distribution terms that you use for the rest of that program.
 
 # A sed program that does not truncate output.
-SED="/usr/bin/sed"
+SED="/bin/sed"
 
 # Sed that helps us avoid accidentally triggering echo(1) options like -n.
-Xsed="/usr/bin/sed -e 1s/^X//"
+Xsed="/bin/sed -e 1s/^X//"
 
 # The HP-UX ksh and POSIX shell print the target directory to stdout
 # if CDPATH is set.
@@ -93,20 +93,20 @@ CC="gcc"
 # Is the compiler the GNU C compiler?
 with_gcc=yes
 
-gcc_dir=`gcc -print-file-name=. | /usr/bin/sed 's,/\.$,,'`
+gcc_dir=`gcc -print-file-name=. | /bin/sed 's,/\.$,,'`
 gcc_ver=`gcc -dumpversion`
 
 # An ERE matcher.
-EGREP="/usr/bin/grep -E"
+EGREP="/bin/grep -E"
 
 # The linker used to build libraries.
-LD="/usr/bin/ld -m elf_x86_64"
+LD="/bin/ld -m elf_x86_64"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
 
 # A BSD-compatible nm program.
-NM="/usr/bin/nm -B"
+NM="/bin/nm -B"
 
 # A symbol stripping program
 STRIP="strip"
@@ -6747,20 +6747,20 @@ CC="g++"
 # Is the compiler the GNU C compiler?
 with_gcc=yes
 
-gcc_dir=`gcc -print-file-name=. | /usr/bin/sed 's,/\.$,,'`
+gcc_dir=`gcc -print-file-name=. | /bin/sed 's,/\.$,,'`
 gcc_ver=`gcc -dumpversion`
 
 # An ERE matcher.
-EGREP="/usr/bin/grep -E"
+EGREP="/bin/grep -E"
 
 # The linker used to build libraries.
-LD="/usr/bin/ld -m elf_x86_64"
+LD="/bin/ld -m elf_x86_64"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
 
 # A BSD-compatible nm program.
-NM="/usr/bin/nm -B"
+NM="/bin/nm -B"
 
 # A symbol stripping program
 STRIP="strip"
@@ -7055,20 +7055,20 @@ CC="gfortran"
 # Is the compiler the GNU C compiler?
 with_gcc=yes
 
-gcc_dir=`gcc -print-file-name=. | /usr/bin/sed 's,/\.$,,'`
+gcc_dir=`gcc -print-file-name=. | /bin/sed 's,/\.$,,'`
 gcc_ver=`gcc -dumpversion`
 
 # An ERE matcher.
-EGREP="/usr/bin/grep -E"
+EGREP="/bin/grep -E"
 
 # The linker used to build libraries.
-LD="/usr/bin/ld -m elf_x86_64"
+LD="/bin/ld -m elf_x86_64"
 
 # Whether we need hard or soft links.
 LN_S="ln -s"
 
 # A BSD-compatible nm program.
-NM="/usr/bin/nm -B"
+NM="/bin/nm -B"
 
 # A symbol stripping program
 STRIP="strip"

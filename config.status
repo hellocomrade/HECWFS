@@ -439,7 +439,7 @@ gives unlimited permission to copy, distribute and modify it."
 
 ac_pwd='/usr/local/src/glos/kdevelop/HECWFS'
 srcdir='.'
-INSTALL='/usr/bin/install -c'
+INSTALL='/bin/install -c'
 AWK='gawk'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
@@ -632,9 +632,9 @@ S["RANLIB"]="ranlib"
 S["AR"]="ar"
 S["ECHO"]="echo"
 S["LN_S"]="ln -s"
-S["EGREP"]="/usr/bin/grep -E"
-S["GREP"]="/usr/bin/grep"
-S["SED"]="/usr/bin/sed"
+S["EGREP"]="/bin/grep -E"
+S["GREP"]="/bin/grep"
+S["SED"]="/bin/sed"
 S["host_os"]="linux-gnu"
 S["host_vendor"]="redhat"
 S["host_cpu"]="x86_64"
