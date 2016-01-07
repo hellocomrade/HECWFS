@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Guan Wang   *
- *   gwang@glc.org   *
+ *   Copyright (C)  by  *
+ *   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
