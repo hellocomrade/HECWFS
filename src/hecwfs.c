@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) *
- *    *
+ *   Copyright (C)   *
+ *      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -61,27 +61,27 @@ inline static void readDimInfo(NC_Handler hNetcdf,NC_DimInfo *pDimInfo,const cha
 {
     char result=0;
     if(!(hNetcdf&&pDimInfo&&pszName))
-        exit(-1);
+        exit(1);
     NC_SetDimName(pDimInfo,pszName);
     result=NC_ReadDimInfo(pDimInfo,hNetcdf);
     if(result)
     {
       NC_Close(hNetcdf);
       printError(0,"HECWFS: Read NetCDF File on Dimension '%s' Failed!\n",pszName);
-      exit(-1);
+      exit(1);
     }
 }
 inline static NC_Variable getVariable(const char *pszName,NC_Handler pNcInfo,NC_DimInfo *pDimInfo,size_t dim_len)
 {
     NC_Variable var=0;
     if(!(pszName&&pNcInfo&&pDimInfo&&dim_len>0))
-        exit(-1);
+        exit(1);
     var=NC_DefineVariable(pszName,pNcInfo,pDimInfo,dim_len);
     if(!var)
     {
         NC_Close(pNcInfo);
         printError(0,"HECWFS: Read NetCDF File on Variable '%s' Failed!\n",pszName);
-        exit(-1);
+        exit(1);
     }
     return var;
 }
@@ -89,14 +89,14 @@ inline static void fillFloatArray(NC_Handler pNcInfo,NC_Variable pVarInfo,float 
 {
     char result=0;
     if(!(pNcInfo&&pVarInfo&&pfVars))
-        exit(-1);
+        exit(1);
     result=NC_ReadFloatArray(pNcInfo,pVarInfo,pfVars);
     if(result)
     {
         printError(0,"HECWFS: Read NetCDF File on Variable(float) '%s' Values Failed!\n",pszName);
         NC_DestroyVariable(pVarInfo);
         NC_Close(pNcInfo);
-        exit(-1);
+        exit(1);
     }
 }
 inline static void* allocMem(size_t size)
@@ -106,7 +106,7 @@ inline static void* allocMem(size_t size)
     if(!temp)
     {
         printError(0,"HECWFS: %s\n","Failed to allocate memory!");
-        exit(-1);
+        exit(1);
     }
     return temp;
 }
@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
   if(argc<5)
   {
       printError(0,"HECWFS: %s\n","not enough parameters!");
-      exit(-1);
+      exit(1);
   }
   int c;
   int shour=0;
@@ -213,7 +213,7 @@ int main(int argc, char *argv[])
   if(!hNetcdf)
   {
       printError(0,"HECWFS: %s\n","Open NetCDF File Failed!");
-      return -1;
+      return 1;
   }
   
   //read dimension info: 'three', 'nele' for the variable: 'nv'
